@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Custom color theme
         "custom-green": "#bae681",
         "custom-red": "#d29293",
         "custom-pink": "#f46cb1",
