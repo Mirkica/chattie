@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body class="bg-custom-green">
+    <div class="chat-container">
+      <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6 mt-10">
+        <p class="text-custom-pink">Welcome I'm Chattie, how may I help you?</p>
+        <!--help buttons -->
+        <button
+          class="option-button text-custom-dark-pink"
+          onclick="sendOption('Order Status')"
+        >
+          Check order status
+        </button>
+        <button
+          class="option-button text-custom-dark-pink"
+          onclick="sendOption('Return Item')"
+        >
+          Return your item
+        </button>
+        <button
+          class="option-button text-custom-dark-pink"
+          onclick="sendOption('Cancel Order')"
+        >
+          Cancel your order
+        </button>
+        <!-- Conversation with Chattie-->
+        <div id="chat-box" class="response mt-4 text-custom-pink"></div>
+        <!-- User input -->
+        <input
+          type="text"
+          id="user_input"
+          placeholder="Type your message here..."
+          class="border border-gray-300 rounded p-2 w-full"
+        />
+        <button
+          onclick="sendMessage()"
+          class="bg-custom-green text-white rounded px-4 py-2 mt-2 hover:bg-custom-pink"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+    <!-- Link to the external JavaScript file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
